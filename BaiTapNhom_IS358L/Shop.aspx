@@ -25,13 +25,15 @@
         .auto-style6 {
             width: 340px;
             height: 296px;
-            margin-right: 34px;
+            margin-right: 0px;
+            margin-bottom: 0px;
         }
         .auto-style7 {
-            width: 79%
+            width: 79%;
+            margin-right: 0px;
         }
         .auto-style8 {
-            width: 89%
+            width: 91%
         }
         .auto-style9 {
             width: 309px;
@@ -55,24 +57,27 @@
         .auto-style14 {
             width: 333px;
         }
-        .auto-style15 {
-            height: 31px;
-            width: 368px;
-        }
-        .auto-style16 {
-            width: 368px;
-        }
         .auto-style17 {
             width: 338px;
         }
         .product-heading{
             text-align:center;
         }
+        .auto-style18 {
+            height: 31px;
+            width: 360px;
+        }
+        .auto-style19 {
+            width: 360px;
+        }
+        .auto-style20 {
+            width: 76%;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width:80%;margin:0 auto">
+        <div style="margin:0 auto" class="auto-style20">
 
             <table style="width:100%;">
                 <tr>
@@ -88,9 +93,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4">&nbsp;</td>
-                </tr>
-                <tr>
                     <td class="auto-style13" dir="rtl">
                         <div id="shoes" class="product">
                             <div>
@@ -103,7 +105,7 @@
                             <img src="/img/hat.jpg" alt="Alternate Text" class="auto-style6" />
                         </div>
                     </td>
-                    <td class="auto-style15" aria-orientation="horizontal" dir="rtl">
+                    <td class="auto-style18" aria-orientation="horizontal" dir="rtl">
                         <div id="shirt" class="auto-style7">
                             <img src="/img/shirt.jpg" alt="Alternate Text" class="auto-style5" />
                         </div>
@@ -119,11 +121,12 @@
                         <div class="place-boby">
                           <h3 class="product-heading">Shoes</h3>
                           <p class="product-description">
-                            Praesent tincidunt sed tellus ut rutrum sed vitae justo.
-                          </p>
+                              Sport Shoes</p>
+                            <p class="product-description">
+                                Price: 18$</p>
                             <div class="quatity">
-                                Nhập số lượng cần mua:
-                                <asp:TextBox ID="TextBox1" runat="server" Width="123px"></asp:TextBox>
+                                Nhập số lượng cần mua:<br />
+                                <asp:TextBox ID="txt_shoes" runat="server" Width="174px" TextMode="Number"></asp:TextBox>
                             </div>                           
                         </div>
 
@@ -132,24 +135,27 @@
                         <div class="place-boby">
                           <h3 class="product-heading">Hat</h3>
                           <p class="product-description">
-                            Praesent tincidunt sed tellus ut rutrum sed vitae justo.
-                          </p>
+                              Fashion Hat</p>
+                            <p class="product-description">
+                                Price: 10$</p>
                             <div class="auto-style17">
                                 Nhập số lượng cần mua:
-                                <asp:TextBox ID="TextBox2" runat="server" Width="123px"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="txt_hat" runat="server" Width="180px" TextMode="Number"></asp:TextBox>
                             </div>                           
                         </div>
 
                     </td>
-                    <td class="auto-style16">
+                    <td class="auto-style19">
                         <div class="place-boby">
                           <h3 class="product-heading">Shirt</h3>
                           <p class="product-description">
-                            Praesent tincidunt sed tellus ut rutrum sed vitae justo.
-                          </p>
+                              Black T-Shirt</p>
+                            <p class="product-description">
+                                Price: 15$</p>
                             <div class="quatity">
-                                Nhập số lượng cần mua:
-                                <asp:TextBox ID="TextBox3" runat="server" Width="123px"></asp:TextBox>
+                                Nhập số lượng cần mua:<br />
+                                <asp:TextBox ID="txt_shirt" runat="server" Width="173px" TextMode="Number" ></asp:TextBox>
                             </div>                           
                         </div>
                     </td>
@@ -157,14 +163,24 @@
                         <div class="place-boby">
                           <h3 class="product-heading">Pants</h3>
                           <p class="product-description">
-                            Praesent tincidunt sed tellus ut rutrum sed vitae justo.
-                          </p>
+                              Gray Pants</p>
+                            <p class="product-description">
+                                Price: 13$</p>
                             <div class="quatity">
                                 Nhập số lượng cần mua:
-                                <asp:TextBox ID="TextBox4" runat="server" Width="123px"></asp:TextBox>
+                                <asp:TextBox ID="txt_pants" runat="server" Width="180px" TextMode="Number"></asp:TextBox>
                             </div>                           
                         </div>
                     </td>
+                </tr>
+                        <tr>
+                    <td colspan="4">
+                        <div style="text-align:center">
+
+                            <asp:Button ID="btn_buy" runat="server" Text="Buy " Width="253px" />
+
+                        </div>
+                        </td>
                 </tr>
             </table>
 

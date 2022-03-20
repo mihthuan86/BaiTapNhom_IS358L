@@ -49,15 +49,21 @@
         <!-- End nav bar -->
 
         <!--  Begin user -->
-            <div id="user">
-                <a id="user-link" href="#">
-                    <img id="user-img" src="/img/icons8-user-40.png" alt="" />    
-                <div id="username">
-                    <% string username = "Hà Minh Thuận"; %>
-                    <%=username %> 
-                </div>
-                </a>                                                
-            </div>      
+            <%if (Session["user"] != null)
+                { %>
+                    <div id="user">
+                        <a id="user-link" href="#">
+                            <img id="user-img" src="/img/icons8-user-40.png" alt="" />    
+                        <div id="username">
+                            <%=FullName%> 
+                        </div>
+                        </a>                                                
+                    </div>
+            <% }
+                else
+                { %>                                                              
+                    <asp:ImageButton ID="imgbtn_DK" runat="server" OnClick="imgbtn_DK_Click"  ImageUrl="/img/TrangChu/icons8-login-40.png" />                                                                                                                                        
+                 <%} %>
           <!--End user -->
       </div>
         <!-- Begin slider -->

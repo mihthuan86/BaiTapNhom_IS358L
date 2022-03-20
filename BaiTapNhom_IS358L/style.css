@@ -79,7 +79,7 @@ html {
         width: 100%;
     }
 
-#user {
+#user,#imgbtn_DK {
     font-size: 20px;
     line-height: 46px;
     padding: 0 21px;
@@ -89,11 +89,11 @@ html {
     text-decoration: none;
     color: white;
 }
-#user-img {
+#user-img, #imgbtn_DK {
     vertical-align: bottom;
 }
-#username{
-    display:inline-block;
+#username, #imgbtn_DK {
+    display: inline-block;
 }
 /*slider*/
 #slider {

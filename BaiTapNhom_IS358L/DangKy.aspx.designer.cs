@@ -87,6 +87,15 @@ namespace BaiTapNhom_IS358L
         protected global::System.Web.UI.WebControls.TextBox txt_sdt;
 
         /// <summary>
+        /// btn_return_dangnhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_return_dangnhap;
+
+        /// <summary>
         /// btn_dangky control.
         /// </summary>
         /// <remarks>

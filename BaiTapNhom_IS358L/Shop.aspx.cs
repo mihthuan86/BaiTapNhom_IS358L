@@ -18,7 +18,11 @@ namespace BaiTapNhom_IS358L
                 AccessData data = new AccessData();
                 string sqlUser = "select * from Custom where userName='" + Session["user"].ToString() + "'";
                 DataTable dt = data.DataGV(sqlUser);
-                FullName = dt.Rows[0]["fullName"].ToString();
+                if (dt.Rows[0]["fullName"] != null)
+                {
+                    FullName = dt.Rows[0]["fullName"].ToString();
+                }
+                else FullName = Session["user"].ToString();
                 Page.DataBind();
             }
         }
@@ -26,6 +30,12 @@ namespace BaiTapNhom_IS358L
         protected void imgbtn_DK_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("DangNhap.aspx");
+        }
+
+        protected void imgbtn_logout_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["user"]=null;
+            Response.Redirect("Shop.aspx");
         }
     }
 }

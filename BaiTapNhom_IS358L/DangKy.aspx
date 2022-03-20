@@ -68,7 +68,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">&nbsp;</td>
+                    <td class="auto-style1">
+                        <asp:Button ID="btn_return_dangnhap" runat="server" Text="Quay trở lại trang đăng nhập " Width="100%" OnClick="btn_return_dangnhap_Click" />
+                    </td>
                     <td>
                         <asp:Button ID="btn_dangky" runat="server" Text="Đăng Ký" Width="152px" OnClick="btn_dangky_Click" />
                     </td>

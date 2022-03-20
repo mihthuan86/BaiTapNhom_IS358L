@@ -57,7 +57,8 @@
                         <div id="username">
                             <%=FullName%> 
                         </div>
-                        </a>                                                
+                        </a>
+                        <asp:ImageButton ID="imgbtn_logout" runat="server" OnClick="imgbtn_logout_Click"  ImageUrl="/img/TrangChu/icons8-logout-40.png" />
                     </div>
             <% }
                 else

@@ -79,7 +79,7 @@ html {
         width: 100%;
     }
 
-#user,#imgbtn_DK {
+#user, #imgbtn_DK, #imgbtn_logout {
     font-size: 20px;
     line-height: 46px;
     padding: 0 21px;
@@ -89,10 +89,10 @@ html {
     text-decoration: none;
     color: white;
 }
-#user-img, #imgbtn_DK {
+#user-img, #imgbtn_DK, #imgbtn_logout {
     vertical-align: bottom;
 }
-#username, #imgbtn_DK {
+#username, #imgbtn_DK, #imgbtn_logout {
     display: inline-block;
 }
 /*slider*/

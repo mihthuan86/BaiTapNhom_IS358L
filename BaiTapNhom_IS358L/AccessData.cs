@@ -11,7 +11,7 @@ namespace BaiTapNhom_IS358L
     {
         public SqlConnection GetConnection()
         {
-            string path = HttpContext.Current.Server.MapPath("App_Data/Database1.mdf");
+            string path = HttpContext.Current.Server.MapPath("App_Data/QuanLyShop.mdf");
 
             return new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; 
             AttachDbFilename=" + path + "; Integrated Security=True");

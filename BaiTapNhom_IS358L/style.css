@@ -96,7 +96,7 @@ html {
     display: inline-block;
 }
 /*slider*/
-#slider {
+#slider,#content {
     position: relative;
     margin-top: 46px;
 }

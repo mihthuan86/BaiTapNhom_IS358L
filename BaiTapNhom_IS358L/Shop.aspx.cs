@@ -29,6 +29,7 @@ namespace BaiTapNhom_IS358L
 
         protected void imgbtn_DK_Click(object sender, ImageClickEventArgs e)
         {
+            Session["last_page"] = "Shop.aspx";
             Response.Redirect("DangNhap.aspx");
         }
 

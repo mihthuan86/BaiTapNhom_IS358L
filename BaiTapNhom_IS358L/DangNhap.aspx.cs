@@ -30,8 +30,8 @@ namespace BaiTapNhom_IS358L
             SqlDataReader reader = data.ExecuteReader(sqlKtra);
             if (reader.HasRows)
             {
-                Session["user"] = txtUser.Text;
-                Response.Redirect("Shop.aspx");
+                Session["user"] = txtUser.Text;             
+                Response.Redirect(Session["last_page"].ToString());
             }
             else
             {

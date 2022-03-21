@@ -15,34 +15,34 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Áo</a>
               <ul class="subnav">
-              <li><a href="#">Áo Thun</a></li>
-              <li><a href="#">Áo Sơ Mi</a></li>
-              <li><a href="#">Áo Ấm</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=AT">Áo Thun</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=ASM">Áo Sơ Mi</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=AA">Áo Ấm</a></li>
             </ul>
           </li>
           <li><a href="#">Quần</a>
               <ul class="subnav">
-              <li><a href="#">Quần Short</a></li>
-              <li><a href="#">Quần Thẻ Thao</a></li>
-              <li><a href="#">Quần Tây</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QS">Quần Short</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QTT">Quần Thể Thao</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QT">Quần Tây</a></li>
             </ul>
           </li>
           <li><a href="#">Váy</a>
               <ul class="subnav">
-              <li><a href="#">Váy Ngắn</a></li>
-              <li><a href="#">Váy Dài</a></li>
-              <li><a href="#">Khác</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VN">Váy Ngắn</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VD">Váy Dài</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VK">Khác</a></li>
             </ul>
           </li>
-          <li><a href="#">Mũ</a></li>                 
+          <li><a href="GioiThieuSanPham.aspx?Loai=M">Mũ</a></li>                 
           <li>
             <a href="#">
               Sản Phẩm Khác             
             </a>
             <ul class="subnav">
-              <li><a href="#">Dây Chuyền</a></li>
-              <li><a href="#">Vòng Tay</a></li>
-              <li><a href="#">Khác</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=DC">Dây Chuyền</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VT">Vòng Tay</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=K">Khác</a></li>
             </ul>
           </li>
         </ul>

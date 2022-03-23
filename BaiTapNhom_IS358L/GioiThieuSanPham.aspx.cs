@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,38 +13,89 @@ namespace BaiTapNhom_IS358L
     {     
         public string FullName;
         public string content;
-        public string Loai;
-        public DataTable dataTable;
+        int SL;
         protected void Page_Load(object sender, EventArgs e)
         {
             AccessData data = new AccessData();
             if (Session["user"] != null)
             {
-
-                string sqlUser = "select * from Custom where userName='" + Session["user"].ToString() + "'";
+                FullName = Session["user"].ToString();
+                data = new AccessData();
+                string sqlUser = "select * from GioHang where userName='" + Session["user"].ToString() + "'";
                 DataTable dt = data.DataGV(sqlUser);
-                if (dt.Rows[0]["fullName"] != null)
-                {
-                    FullName = dt.Rows[0]["fullName"].ToString();
-                }
-                else FullName = Session["user"].ToString();
-                Page.DataBind();
+                SL = dt.Rows.Count;
 
+                if (SL > 0)
+                {
+                    SLSP.Text = "(" + SL + ")";
+                }
+                else
+                {
+                    SLSP.Text = "(0)";
+                }
             }
-            Loai = Request.QueryString["Loai"];
-            string sqlSl = "select * from Product where LoaiSp='" + Loai + "'";
-            dataTable = data.DataGV(sqlSl);            
-        }
-        protected void imgbtn_DK_Click(object sender, ImageClickEventArgs e)
-        {
-            Session["last_page"] = "GioiThieuSanPham.aspx?Loai="+Loai;
-            Response.Redirect("DangNhap.aspx");
+            if (!IsPostBack)
+            {
+                string loai = Request.QueryString["Loai"];
+                AccessData gv = new AccessData();
+                string sqlListSp = "select * from Product where LoaiSp= N'" + loai + "'";
+                DataList1.DataSource = gv.DataGV(sqlListSp);
+                DataList1.DataBind();
+            }           
         }
 
         protected void imgbtn_logout_Click(object sender, ImageClickEventArgs e)
         {
             Session["user"] = null;
-            Response.Redirect("Shop.aspx");
+        }
+
+        protected void imgbtn_DN_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+        }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Add")
+            {
+                if (Session["user"] == null)
+                {
+                    Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+                }
+                else
+                {
+                    AccessData dt = new AccessData();
+                    string ma = DataList1.DataKeys[e.Item.ItemIndex].ToString();
+
+                    string sqlKT = "select * from GioHang where userName=N'" + Session["user"].ToString() + "' and Masp =N'" + ma + "'";
+
+                    string sqlCreate = "INSERT INTO GioHang VALUES(N'" + Session["user"].ToString() + "',N'" + ma + "',1)";
+                    string sqlAdd = "update GioHang set SoLuong = SoLuong +1 where userName=N'" + Session["user"].ToString() + "' and Masp =N'" + ma + "' ";
+
+                    SqlDataReader reader = dt.ExecuteReader(sqlKT);
+                    if (reader.HasRows)
+                    {
+                        dt.ExcuteNonQuery(sqlAdd);
+
+                    }
+                    else
+                    {
+                        dt.ExcuteNonQuery(sqlCreate);
+                    }
+                    Response.Write("<script>alert('Đã thêm sản phẩm vào giỏ hàng!');</script>");
+
+
+                }
+            }
+            if (e.CommandName == "Buy")
+            {
+                string ma = DataList1.DataKeys[e.Item.ItemIndex].ToString();
+                if (Session["user"] == null)
+                {
+                    Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+                }
+                else Response.Redirect("ThanhToan.aspx?ma=" + ma);
+            }
         }
     }
 }

@@ -3,53 +3,46 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <title></title>
-    <style type="text/css">
+<title>Đăng Nhập</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/StyleSheet.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet"/>
+<!-- //web font -->
+	<style type="text/css">
         .auto-style1 {
-            width: 198px;
-        }
-        .btn{
-            width:40%;
-            margin:0 10px;
+            color: #FF0000;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div style="width:50%;margin:0 auto">
-            <table style="width:100%;">
-                <tr>
-                    <td colspan="2">
-                        <h2 style="color:red;font:bold;text-align:center">
-                            Xin Chào Quý Khách
-                        </h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">Tên đăng nhập</td>
-                    <td>
-                        <asp:TextBox ID="txtUser" runat="server" Width="338px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">Mật khẩu</td>
-                    <td>
-                        <asp:TextBox ID="txtPass" runat="server" Width="337px" TextMode="Password"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div style="width:50%;margin: 0 auto">
-
-                            <asp:Button class="btn" ID="btnDangNhap" runat="server" Text="Đăng Nhập" Width="151px" OnClick="btnDangNhap_Click" />
-                            <asp:Button class="btn" ID="btnDangKy" runat="server" Text="Đăng Ký" Width="151px" OnClick="btnDangKy_Click" />
-
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </form>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Đăng nhập</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form id="form1" runat="server">
+					<div class="txt-center">
+					<asp:TextBox ID="username" placeholder="Nhập tên đăng nhập" runat="server"  required=""></asp:TextBox>
+				<br/>
+					<asp:TextBox ID="password" placeholder="Nhập mật khẩu" runat="server"  required=""></asp:TextBox>
+					
+				<br/>
+					    <strong>
+					<asp:Label ID="lbl" runat="server" CssClass="auto-style1"></asp:Label>
+					    </strong>
+					<asp:Button ID="btn_DN" runat="server" Text="Đăng nhập" OnClick="btn_DN_Click" />
+				    </div>
+				</form>
+				<p>Bạn không có tài khoản? <a href="DangKy.aspx"> Đăng ký tại đây!</a></p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -12,32 +12,30 @@ namespace BaiTapNhom_IS358L
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"] != null)
-            {
-                txtUser.Text = Session["user"].ToString();
-            }
+
         }
 
-        protected void btnDangKy_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("DangKy.aspx");
-        }
 
-        protected void btnDangNhap_Click(object sender, EventArgs e)
+        protected void btn_DN_Click(object sender, EventArgs e)
         {
             AccessData data = new AccessData();
-            string sqlKtra = "select * from Custom where userName ='"+txtUser.Text+"' and pass='"+txtPass.Text+"' ";
+            string sqlKtra = "select * from Custom where userName ='" + username.Text + "' and pass='" + password.Text + "' ";
             SqlDataReader reader = data.ExecuteReader(sqlKtra);
             if (reader.HasRows)
             {
-                Session["user"] = txtUser.Text;             
-                Response.Redirect(Session["last_page"].ToString());
+                Session["user"] = username.Text;
+                string url = Request.QueryString["ReturnUrl"];
+                if (url == null)
+                {
+                    Response.Redirect("Shop.aspx");
+                }
+                Response.Redirect(url);
             }
             else
             {
-                txtPass.Text = "";
-                txtUser.Text = "";
-                Response.Write("<script>alert('Sai tài khoản hoặc mật khẩu')</script>");
+                password.Text = "";
+                username.Text = "";
+                lbl.Text="Sai tài khoản hoặc mật khẩu";
             }
         }
     }

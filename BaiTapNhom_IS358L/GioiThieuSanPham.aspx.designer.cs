@@ -24,6 +24,15 @@ namespace BaiTapNhom_IS358L
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// SLSP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SLSP;
+
+        /// <summary>
         /// imgbtn_logout control.
         /// </summary>
         /// <remarks>
@@ -33,12 +42,21 @@ namespace BaiTapNhom_IS358L
         protected global::System.Web.UI.WebControls.ImageButton imgbtn_logout;
 
         /// <summary>
-        /// imgbtn_DK control.
+        /// imgbtn_DN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgbtn_DK;
+        protected global::System.Web.UI.WebControls.ImageButton imgbtn_DN;
+
+        /// <summary>
+        /// DataList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataList1;
     }
 }

@@ -28,12 +28,12 @@ namespace BaiTapNhom_IS358L
 
             if (!IsPostBack)
             {
-                //Hiển thị dữ liệu sản phẩm lên DataList
+                /*Hiển thị dữ liệu sản phẩm lên DataList
                 AccessData gv = new AccessData();
                 string sqlListSp = "SELECT * FROM Product";
 
                 DataList1.DataSource = gv.DataGV(sqlListSp);
-                DataList1.DataBind();
+                DataList1.DataBind();*/
             }
             
                 

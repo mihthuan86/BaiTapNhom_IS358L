@@ -13,6 +13,7 @@ namespace BaiTapNhom_IS358L
         public string FullName;
         public string content;
         public string Loai;
+        public DataTable dataTable;
         protected void Page_Load(object sender, EventArgs e)
         {
             AccessData data = new AccessData();
@@ -31,25 +32,7 @@ namespace BaiTapNhom_IS358L
             }
             Loai = Request.QueryString["Loai"];
             string sqlSl = "select * from Product where LoaiSp='" + Loai + "'";
-            DataTable dataTable = data.DataGV(sqlSl);
-            if (dataTable.Rows.Count > 0)
-            {
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-                    content = "<div style = 'max-width: 20%;display:inline-block;vertical-align:top'> " +
-                                         "<a href=ChiTietSP.aspx?masp=" + dataTable.Rows[i]["MaSp"].ToString() + ">" +
-                                             "<img src = '" + dataTable.Rows[i]["HinhAnh"].ToString() + "'height=300px width=300px >" +
-                                         "</a>" +
-                                                 "<div style='margin-left:30px'>" +
-                                                    " <p>" + dataTable.Rows[i]["TenSp"].ToString() +
-                                                     "</p>" +
-                                                     "<p>" + dataTable.Rows[i]["MoTaChung"].ToString() +
-                                                     "</p>" +
-                                                 "</div>" +
-                                       "</div>";
-                }
-
-            }
+            dataTable = data.DataGV(sqlSl);            
         }
         protected void imgbtn_DK_Click(object sender, ImageClickEventArgs e)
         {

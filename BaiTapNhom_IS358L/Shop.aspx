@@ -39,23 +39,23 @@
           <li><a href="#">Home</a></li>
           <li><a href="#">Áo</a>
               <ul class="subnav">
-              <li><a href="#">Áo Thun</a></li>
-              <li><a href="#">Áo Sơ Mi</a></li>
-              <li><a href="#">Áo Ấm</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=AT">Áo Thun</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=ASM">Áo Sơ Mi</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=AA">Áo Ấm</a></li>
             </ul>
           </li>
           <li><a href="#">Quần</a>
               <ul class="subnav">
-              <li><a href="#">Quần Short</a></li>
-              <li><a href="#">Quần Thẻ Thao</a></li>
-              <li><a href="#">Quần Tây</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QS">Quần Short</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QTT">Quần Thẻ Thao</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=QT">Quần Tây</a></li>
             </ul>
           </li>
           <li><a href="#">Váy</a>
               <ul class="subnav">
-              <li><a href="#">Váy Ngắn</a></li>
-              <li><a href="#">Váy Dài</a></li>
-              <li><a href="#">Khác</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VN">Váy Ngắn</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VD">Váy Dài</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VK">Khác</a></li>
             </ul>
           </li>
           <li><a href="#">Mũ</a></li>                 
@@ -64,11 +64,12 @@
               Sản Phẩm Khác             
             </a>
             <ul class="subnav">
-              <li><a href="#">Dây Chuyền</a></li>
-              <li><a href="#">Vòng Tay</a></li>
-              <li><a href="#">Khác</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=DC">Dây Chuyền</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=VT">Vòng Tay</a></li>
+              <li><a href="GioiThieuSanPham.aspx?Loai=K">Khác</a></li>
             </ul>
           </li>
+             <li><a href="GioHang.aspx">Giỏ Hàng</a></li>
         </ul>
         <!-- End nav bar -->
 
@@ -120,40 +121,7 @@
               <span class="dot" onclick="currentSlide(2)"></span> 
             </div>
         </div>
-        <!-- end slider -->
-        <br/>
-        <br/>
-        <br/>
-        <div>
-         <asp:DataList ID="DataList1" class="dtl" runat="server" DataKeyField="MaSp" RepeatColumns="5">
-             <ItemTemplate>
-                 <table class="auto-style2">
-                     <tr>
-                         <td>
-                             <asp:Image ID="Image1" runat="server" Height="320px" ImageUrl='<%# Eval("HinhAnh") %>'
-                                 Width="240px" />
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>
-                             <asp:Label ID="Label1" runat="server"  Text='<%# Eval("TenSP") %>'></asp:Label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                             <b style="color:red;"><asp:Label ID="Label2" runat="server"  Text='<%# Eval("Gia") %>'></asp:Label><sup>đ</sup></b>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>
-                             <asp:Button ID="Button1" runat="server" Text="MUA NGAY" OnClick="btnBuy_Click" />
-                             <asp:Button ID="Button2" runat="server" Text="THÊM VÀO GIỎ" OnClick="btnAddCart_Click" />
-                         </td>
-                     </tr>
-                 </table>
-             </ItemTemplate>
-         </asp:DataList>
-             </div>
+        <!-- end slider -->      
     </form>
 </body>
      <script>

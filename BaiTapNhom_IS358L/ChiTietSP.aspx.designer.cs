@@ -11,7 +11,7 @@ namespace BaiTapNhom_IS358L
 {
 
 
-    public partial class Shop
+    public partial class ChiTietSP
     {
 
         /// <summary>
@@ -24,21 +24,30 @@ namespace BaiTapNhom_IS358L
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// imgbtn_logout control.
+        /// ddl_size control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgbtn_logout;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_size;
 
         /// <summary>
-        /// imgbtn_DK control.
+        /// txt_soluong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgbtn_DK;
+        protected global::System.Web.UI.WebControls.TextBox txt_soluong;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

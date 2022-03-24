@@ -14,7 +14,7 @@
         .auto-style2, sup {
             color: #FF0000;
         }
-        .td,input,a {
+        .td,input {
             font-family:Cambria;
             text-align:center;
             padding:5px;

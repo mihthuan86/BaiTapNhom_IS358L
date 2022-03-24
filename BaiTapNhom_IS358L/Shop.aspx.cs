@@ -48,6 +48,7 @@ namespace BaiTapNhom_IS358L
         protected void imgbtn_logout_Click(object sender, ImageClickEventArgs e)
         {
             Session["user"]=null;
+            Response.Redirect(Request.RawUrl); //reload trang
         }
         
         protected void imgbtn_DN_Click(object sender, ImageClickEventArgs e)

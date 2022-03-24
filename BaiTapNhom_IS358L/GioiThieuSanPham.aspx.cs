@@ -11,11 +11,11 @@ namespace BaiTapNhom_IS358L
 {
     public partial class GioiThieuSanPham : System.Web.UI.Page
     {     
-        public string FullName;
-        public string content;
+        public string FullName, content, loai;
         int SL;
         protected void Page_Load(object sender, EventArgs e)
         {
+            loai = Request.QueryString["Loai"];
             AccessData data = new AccessData();
             if (Session["user"] != null)
             {
@@ -36,7 +36,7 @@ namespace BaiTapNhom_IS358L
             }
             if (!IsPostBack)
             {
-                string loai = Request.QueryString["Loai"];
+                
                 AccessData gv = new AccessData();
                 string sqlListSp = "select * from Product where LoaiSp= N'" + loai + "'";
                 DataList1.DataSource = gv.DataGV(sqlListSp);
@@ -47,11 +47,12 @@ namespace BaiTapNhom_IS358L
         protected void imgbtn_logout_Click(object sender, ImageClickEventArgs e)
         {
             Session["user"] = null;
+            Response.Redirect(Request.RawUrl); //reload trang
         }
 
         protected void imgbtn_DN_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+            Response.Redirect("DangNhap.aspx?ReturnUrl=GioiThieuSanPham?Loai=" + loai);
         }
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
@@ -60,7 +61,7 @@ namespace BaiTapNhom_IS358L
             {
                 if (Session["user"] == null)
                 {
-                    Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+                    Response.Redirect("DangNhap.aspx?ReturnUrl=GioiThieuSanPham?Loai=" + loai);
                 }
                 else
                 {
@@ -92,7 +93,7 @@ namespace BaiTapNhom_IS358L
                 string ma = DataList1.DataKeys[e.Item.ItemIndex].ToString();
                 if (Session["user"] == null)
                 {
-                    Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
+                    Response.Redirect("DangNhap.aspx?ReturnUrl=GioiThieuSanPham?Loai=" + loai);
                 }
                 else Response.Redirect("ThanhToan.aspx?ma=" + ma);
             }

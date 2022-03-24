@@ -65,7 +65,7 @@ namespace BaiTapNhom_IS358L
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("DangNhap.aspx?ReturnUrl=TrangChu.aspx");
+                Response.Redirect("DangNhap.aspx?ReturnUrl=Shop.aspx");
             }
             else
             {
@@ -94,7 +94,8 @@ namespace BaiTapNhom_IS358L
 
         protected void imgbtn_logout_Click(object sender, ImageClickEventArgs e)
         {
-            Session["user"] = null;           
+            Session["user"] = null;
+            Response.Redirect(Request.RawUrl); //reload trang
         }
 
         protected void imgbtn_DN_Click(object sender, ImageClickEventArgs e)
